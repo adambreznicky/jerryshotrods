@@ -1,0 +1,19 @@
+{
+  "name": "jerryshotrods.com",
+  "version": "1.0.0",
+  "description": "website for jerry's hot rods classic car restoration",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adambreznicky/jerryshotrods.git"
+  },
+  "author": "adam breznicky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adambreznicky/jerryshotrods/issues"
+  },
+  "homepage": "https://github.com/adambreznicky/jerryshotrods#readme"
+}
