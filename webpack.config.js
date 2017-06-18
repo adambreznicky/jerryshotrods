@@ -1,5 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const fs = require('fs-extra');
+
+
+fs.copy("./src/index.html", "./dist/index.html", function (err) {
+  if (err) return console.error(err)
+});
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -12,13 +18,21 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src')
+    contentBase: path.resolve(__dirname, './dist')
   },
-  target: 'node',
+  node: {
+    fs: "empty",
+    dns: "empty",
+    dgram: "empty",
+    readline: "empty",
+    child_process: "empty",
+    net: "empty",
+    tls: "empty"
+  },
   module: {
     rules: [
       {
-        test: /\.es$/,
+        test: /\.(js|es)$/,
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
@@ -38,5 +52,9 @@ module.exports = {
         ]
       }
     ],
+  },
+  resolve: {
+    // allows extension-less require/import statements for files with these extensions
+    extensions: ['.es', '.js']
   }
 };
