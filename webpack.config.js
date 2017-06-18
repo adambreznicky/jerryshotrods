@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: ['./app.js'],
+    app: ['./app.es'],
   },
   output: {
     path: path.resolve(__dirname, './dist/assets'),
@@ -14,10 +14,11 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, './src')
   },
+  target: 'node',
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.es$/,
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
