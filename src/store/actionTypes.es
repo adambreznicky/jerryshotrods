@@ -1,0 +1,2 @@
+export const SET_VIEW_HOME = 'SET_VIEW_HOME'
+export const SET_VIEW_PROJECTS = 'SET_VIEW_PROJECTS'

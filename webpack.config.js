@@ -1,16 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
-// const fs = require('fs-extra');
-
+const swig = require('swig');
+const fs = require('fs-extra');
 
 // fs.copy("./src/index.html", "./dist/index.html", function (err) {
 //   if (err) return console.error(err)
 // });
+const isProd = process.env.NODE_ENV === 'production'
+const indexTpl = swig.compileFile(`./src/index.swig`)
+fs.writeFileSync(`./dist/index.html`, indexTpl({isProd}))
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: ['./app.es'],
+    app: ['./entry.jsx'],
   },
   output: {
     path: path.resolve(__dirname, './dist/assets'),
@@ -18,7 +21,7 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src')
+    contentBase: path.resolve(__dirname, './dist')
   },
   node: {
     fs: "empty"
@@ -30,11 +33,11 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        test: /\.(js|es)$/,
+        test: /\.(js|es|jsx)$/,
         exclude: [/node_modules/],
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] },
+          options: { presets: ['es2015', 'react'] },
         }],
       },
       {
@@ -53,6 +56,6 @@ module.exports = {
   },
   resolve: {
     // allows extension-less require/import statements for files with these extensions
-    extensions: ['.es', '.js']
+    extensions: ['.es', '.js', '.jsx']
   }
 };
