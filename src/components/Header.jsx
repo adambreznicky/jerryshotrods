@@ -18,10 +18,10 @@ export default class Header extends Component {
       <div className="header">
         <div className="title">
           <img src={Logo} alt="Jerry's Hot Rods Logo" id="titleLogo"/>
-          <p id="title">Jerry's Hot Rods</p>
+          <h2 id="title">Jerry's Hot Rods</h2>
         </div>
         <div className="breadcrumbs">
-          <nav aria-label="You are here:" role="navigation">
+          <nav aria-label="You are here:" role="navigation" id="header-nav">
             <Breadcrumbs>
               <BreadcrumbItem><a>Home</a></BreadcrumbItem>
               <BreadcrumbItem><a>Services</a></BreadcrumbItem>
