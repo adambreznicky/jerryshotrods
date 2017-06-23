@@ -1,18 +1,13 @@
 import React from 'react'
-import { Menu, MenuItem } from 'react-foundation'
 
 import ga from '../util/GoogleAnalytics'
 ga.pageview(window.location.pathname)
 
+import HeaderContainer from '../containers/HeaderContainer'
+
 const App = () => (
   <div>
-    <div className="menu-active-state-example">
-      <Menu>
-        <MenuItem isActive><a>Home</a></MenuItem>
-        <MenuItem><a>About</a></MenuItem>
-        <MenuItem><a>Nachos</a></MenuItem>
-      </Menu>
-    </div>
+    <HeaderContainer />
     <p>
       Hello there, dude.
     </p>

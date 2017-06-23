@@ -1,2 +1,29 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+
+.header {
+  width: 100%;
+  padding: 8px;
+  background-color: darkgrey;
+  box-shadow: 6px 6px 6px lightsteelblue;
+
+  .title {
+    width: 50%;
+    margin: 0 auto;
+
+    #titleLogo {
+      max-height: 50px;
+    }
+
+    #title {
+      line-height: 50px;
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+
+  .breadcrumbs {
+    margin: 0;
+  }
+
+}
