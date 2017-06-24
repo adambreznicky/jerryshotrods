@@ -6,3 +6,6 @@
 
 ### develop
 * `npm start`
+
+### production build
+* `npm dist`

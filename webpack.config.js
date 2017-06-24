@@ -47,12 +47,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: isProd ? ExtractTextPlugin.extract('css')
+        loader: isProd ? ExtractTextPlugin.extract('css-loader')
           : 'style-loader!css-loader',
       },
       {
         test: /\.(sass|scss)$/,
-        loader:  isProd ? ExtractTextPlugin.extract('css!sass')
+        loader:  isProd ? ExtractTextPlugin.extract('css-loader!sass-loader')
           : 'style-loader!css-loader?sourceMap!sass-loader?sourceMap'
       },
       {
