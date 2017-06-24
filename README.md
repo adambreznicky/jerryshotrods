@@ -8,4 +8,4 @@
 * `npm start`
 
 ### production build
-* `npm dist`
+* `npm run dist`

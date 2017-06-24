@@ -13,7 +13,7 @@
 
   </head>
   <body>
-    <div id="jhr">
+    <div>
       <noscript>
           <p>
           Sorry, the Flood Information Viewer requires Javascript to function.
