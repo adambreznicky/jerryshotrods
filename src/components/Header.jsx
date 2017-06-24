@@ -10,7 +10,6 @@ export default class Header extends Component {
 
   constructor(props) {
     super(props)
-    console.log(props)
   }
 
   render() {
@@ -23,14 +22,11 @@ export default class Header extends Component {
         <div className="breadcrumbs">
           <nav aria-label="You are here:" role="navigation" id="header-nav">
             <Breadcrumbs>
-              <BreadcrumbItem><a>Home</a></BreadcrumbItem>
-              <BreadcrumbItem><a>Services</a></BreadcrumbItem>
-              <BreadcrumbItem><a>Projects</a></BreadcrumbItem>
-              <BreadcrumbItem><a>About Us</a></BreadcrumbItem>
-              <BreadcrumbItem><a>Contact</a></BreadcrumbItem>
-              <BreadcrumbItem>
-                <Inline showForSr>Current: </Inline> Cloning
-              </BreadcrumbItem>
+              <BreadcrumbItem><a onClick={this.props.setViewHome}>Home</a></BreadcrumbItem>
+              <BreadcrumbItem><a onClick={this.props.setViewServices}>Services</a></BreadcrumbItem>
+              <BreadcrumbItem><a onClick={this.props.setViewProjects}>Projects</a></BreadcrumbItem>
+              <BreadcrumbItem><a onClick={this.props.setViewAboutUs}>About Us</a></BreadcrumbItem>
+              <BreadcrumbItem><a onClick={this.props.setViewContact}>Contact</a></BreadcrumbItem>
             </Breadcrumbs>
           </nav>
         </div>

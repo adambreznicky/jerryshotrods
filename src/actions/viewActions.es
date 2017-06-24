@@ -6,8 +6,26 @@ export const setViewHome = () => {
   }
 }
 
+export const setViewServices = () => {
+  return {
+    type: types.SET_VIEW_SERVICES
+  }
+}
+
 export const setViewProjects = () => {
   return {
     type: types.SET_VIEW_PROJECTS
+  }
+}
+
+export const setViewAboutUs = () => {
+  return {
+    type: types.SET_VIEW_ABOUT_US
+  }
+}
+
+export const setViewContact = () => {
+  return {
+    type: types.SET_VIEW_CONTACT
   }
 }

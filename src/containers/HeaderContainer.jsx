@@ -15,8 +15,17 @@ const mapDispatchToProps = (dispatch) => {
     setViewHome: () => {
       dispatch(actions.setViewHome())
     },
+    setViewServices: () => {
+      dispatch(actions.setViewServices())
+    },
     setViewProjects: () => {
       dispatch(actions.setViewProjects())
+    },
+    setViewAboutUs: () => {
+      dispatch(actions.setViewAboutUs())
+    },
+    setViewContact: () => {
+      dispatch(actions.setViewContact())
     }
   }
 }
