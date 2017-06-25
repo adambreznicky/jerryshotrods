@@ -4,11 +4,13 @@ import HomeView from './HomeView'
 import ServicesView from './ServicesView'
 import ProjectsView from './ProjectsView'
 import AboutUsView from './AboutUsView'
+import ContactView from './ContactView'
 
 export default class View extends Component {
   propTypes: {
     view: PropTypes.object.isRequired,
     browser: PropTypes.object.isRequired,
+    projects: PropTypes.array.isRequired,
     setViewContact: PropTypes.func.isRequired
   }
 
@@ -25,11 +27,15 @@ export default class View extends Component {
         )
       case 'projects':
         return (
-          <ProjectsView browser={this.props.browser}/>
+          <ProjectsView browser={this.props.browser} projects={this.props.projects}/>
         )
       case 'about us':
         return (
           <AboutUsView browser={this.props.browser}/>
+        )
+      case 'contact':
+        return (
+          <ContactView browser={this.props.browser}/>
         )
       default:
         return (

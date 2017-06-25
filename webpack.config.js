@@ -29,7 +29,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, './dist')
   },
   node: {
-    fs: "empty"
+    fs: "empty",
+    child_process: 'empty'
   },
   module: {
     loaders: [
@@ -58,6 +59,15 @@ module.exports = {
       {
         test: /\.(jpg|png|gif)$/,
         loader: 'url-loader?limit=65536'
+      },
+      {
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          header: true,
+          skipEmptyLines: true
+        }
       }
     ],
   },

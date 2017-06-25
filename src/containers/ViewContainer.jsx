@@ -6,7 +6,8 @@ import View from '../components/View'
 const mapStateToProps = (state) => {
   return {
     view: state.view,
-    browser: state.browser
+    browser: state.browser,
+    projects: state.projects
   }
 }
 
