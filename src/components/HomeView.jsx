@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Callout, Colors, Row, Column } from 'react-foundation'
-import Camaro from '../static/photos/camaro_front.jpg'
-import Camaro2 from '../static/photos/camaro_topdown.jpg'
+import Camaro from '../static/home/camaro_front.jpg'
+import Camaro2 from '../static/home/camaro_topdown.jpg'
 
 export default class HomeView extends Component {
   propTypes: {

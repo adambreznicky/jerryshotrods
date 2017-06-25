@@ -12,4 +12,4 @@ render((
   <Provider store={store}>
     <App />
   </Provider>
-), document.getElementById('jhr'))
+), document.getElementById('jhrSite'))
