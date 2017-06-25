@@ -71,6 +71,32 @@ html, body {
           }
         }
       }
+
+      .smallMenu {
+        #smallMenu {
+          max-height: 40px;
+        }
+      }
+      .smallMenuDropdown {
+        width: 300%;
+        a {
+          margin-left: 15px;
+          margin-top: 5px;
+        }
+      }
+      .smallTitle {
+        text-align: center;
+        #smallTitle {
+          font: 400 30px 'Arizonia', Helvetica, sans-serif;
+        }
+      }
+      .smallLogo {
+        text-align: center;
+      }
+      div.columns.small-2 {
+        padding: 0;
+      }
+
     }
 
     .viewContent {
@@ -115,6 +141,27 @@ html, body {
 
           .slick-dots {
             margin-bottom: 10px;
+          }
+        }
+      }
+
+      .projectsView {
+        .display {
+          text-align: center;
+          margin-bottom: 20px;
+
+          h5 {
+            font: 400 60px 'Arizonia', Helvetica, sans-serif;
+
+            @media screen and (max-width: 500px) {
+              font: 400 40px 'Arizonia', Helvetica, sans-serif;
+              padding-left: 6px;
+              padding-right: 6px;
+            }
+          }
+
+          p {
+            padding: 10px;
           }
         }
       }

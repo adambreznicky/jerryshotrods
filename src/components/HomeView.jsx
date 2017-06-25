@@ -49,8 +49,8 @@ export default class HomeView extends Component {
             <Callout color={Colors.PRIMARY}>
               <h5>Contact Us Today!</h5>
               <p className="text">
-                Send us an <a href="mailto:jerry@jerryshotrods.com">email</a> or use our
-                &nbsp;<a href="#" onClick={() => {this.props.contactForm}}>Contact</a> page to
+                Send us an <a href="mailto:jerry@jerryshotrods.com">email</a> or use
+                our <a href="#" onClick={() => {this.props.contactForm}}>Contact</a> page to
                   tell us what you need.<br />
                 <a href="#" onClick={() => {this.props.contactForm}}>Contact us</a> anytime!
                   We look forward to helping you with your project.
