@@ -163,6 +163,19 @@ html, body {
           p {
             padding: 10px;
           }
+
+          .columns.large-6 {
+            img {
+              width: 80%;
+            }
+          }
+
+          .columns.small-10 {
+            img {
+              width: 80%;
+              max-width: 456px;
+            }
+          }
         }
       }
 
