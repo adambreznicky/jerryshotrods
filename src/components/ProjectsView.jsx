@@ -10,13 +10,12 @@ export default class ProjectsView extends Component {
 
   constructor(props) {
     super(props)
-    console.log(this.props.projects)
   }
 
   render() {
     const projList = this.props.projects.finishedProjects.map(function(proj, i) {
         if (proj.photo2 != "") {
-          return <div key={proj.title}>
+          return <div key={proj.title+i}>
             <Row className="display">
               <h5>{proj.title}</h5>
               <Column large={6}>
@@ -32,7 +31,7 @@ export default class ProjectsView extends Component {
           </div>;
         }
         else {
-          return <div key={proj.title}>
+          return <div key={proj.title+i}>
             <Row className="display">
               <h5>{proj.title}</h5>
               <Column large={6}>

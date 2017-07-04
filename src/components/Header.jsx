@@ -47,7 +47,7 @@ export default class Header extends Component {
                 <Breadcrumbs>
                   <BreadcrumbItem><a onClick={this.props.setViewHome}>Home</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewServices}>Services</a></BreadcrumbItem>
-                  <BreadcrumbItem><a onClick={this.props.setViewProjects}>Projects</a></BreadcrumbItem>
+                  <BreadcrumbItem><a onClick={this.props.setViewProjects}>Project Gallery</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewAboutUs}>About Us</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewContact}>Contact</a></BreadcrumbItem>
                 </Breadcrumbs>
@@ -68,7 +68,7 @@ export default class Header extends Component {
               <div style={{display:this.state.isMenuOpen}} className="smallMenuDropdown">
                 <a onClick={() => {this.props.setViewHome(); this.close();}}>Home</a><br />
                 <a onClick={() => {this.props.setViewServices(); this.close();}}>Services</a><br />
-                <a onClick={() => {this.props.setViewProjects(); this.close();}}>Projects</a><br />
+                <a onClick={() => {this.props.setViewProjects(); this.close();}}>Project Gallery</a><br />
                 <a onClick={() => {this.props.setViewAboutUs(); this.close();}}>About Us</a><br />
                 <a onClick={() => {this.props.setViewContact(); this.close();}}>Contact</a>
               </div>
