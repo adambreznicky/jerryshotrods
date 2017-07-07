@@ -48,6 +48,7 @@ export default class Header extends Component {
                   <BreadcrumbItem><a onClick={this.props.setViewHome}>Home</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewServices}>Services</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewProjects}>Project Gallery</a></BreadcrumbItem>
+                  <BreadcrumbItem><a onClick={this.props.setViewPhotos}>Photo Gallery</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewAboutUs}>About Us</a></BreadcrumbItem>
                   <BreadcrumbItem><a onClick={this.props.setViewContact}>Contact</a></BreadcrumbItem>
                 </Breadcrumbs>
@@ -69,6 +70,7 @@ export default class Header extends Component {
                 <a onClick={() => {this.props.setViewHome(); this.close();}}>Home</a><br />
                 <a onClick={() => {this.props.setViewServices(); this.close();}}>Services</a><br />
                 <a onClick={() => {this.props.setViewProjects(); this.close();}}>Project Gallery</a><br />
+                <a onClick={() => {this.props.setViewPhotos(); this.close();}}>Photo Gallery</a><br />
                 <a onClick={() => {this.props.setViewAboutUs(); this.close();}}>About Us</a><br />
                 <a onClick={() => {this.props.setViewContact(); this.close();}}>Contact</a>
               </div>

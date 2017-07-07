@@ -18,6 +18,12 @@ export const setViewProjects = () => {
   }
 }
 
+export const setViewPhotos = () => {
+  return {
+    type: types.SET_VIEW_PHOTOS
+  }
+}
+
 export const setViewAboutUs = () => {
   return {
     type: types.SET_VIEW_ABOUT_US

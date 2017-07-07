@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
   return {
     view: state.view,
     browser: state.browser,
-    projects: state.projects
+    projects: state.projects,
+    photos: state.photos
   }
 }
 

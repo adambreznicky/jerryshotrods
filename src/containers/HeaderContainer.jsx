@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => {
     setViewProjects: () => {
       dispatch(actions.setViewProjects())
     },
+    setViewPhotos: () => {
+      dispatch(actions.setViewPhotos())
+    },
     setViewAboutUs: () => {
       dispatch(actions.setViewAboutUs())
     },

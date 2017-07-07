@@ -3,6 +3,7 @@ import { Breadcrumbs, BreadcrumbItem, Inline } from 'react-foundation'
 import HomeView from './HomeView'
 import ServicesView from './ServicesView'
 import ProjectsView from './ProjectsView'
+import PhotosView from './PhotosView'
 import AboutUsView from './AboutUsView'
 import ContactView from './ContactView'
 
@@ -11,6 +12,7 @@ export default class View extends Component {
     view: PropTypes.object.isRequired,
     browser: PropTypes.object.isRequired,
     projects: PropTypes.array.isRequired,
+    photos: PropTypes.object.isRequired,
     setViewContact: PropTypes.func.isRequired
   }
 
@@ -28,6 +30,10 @@ export default class View extends Component {
       case 'projects':
         return (
           <ProjectsView browser={this.props.browser} projects={this.props.projects}/>
+        )
+      case 'photos':
+        return (
+          <PhotosView browser={this.props.browser} photos={this.props.photos}/>
         )
       case 'about us':
         return (

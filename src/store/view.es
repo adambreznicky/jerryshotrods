@@ -4,6 +4,7 @@ import {
   SET_VIEW_HOME,
   SET_VIEW_SERVICES,
   SET_VIEW_PROJECTS,
+  SET_VIEW_PHOTOS,
   SET_VIEW_ABOUT_US,
   SET_VIEW_CONTACT
 } from './actionTypes'
@@ -25,6 +26,10 @@ export default function view(state = initialState, action) {
     case SET_VIEW_PROJECTS:
       return objectAssign({}, state, {
         view: 'projects'
+      })
+    case SET_VIEW_PHOTOS:
+      return objectAssign({}, state, {
+        view: 'photos'
       })
     case SET_VIEW_ABOUT_US:
       return objectAssign({}, state, {
