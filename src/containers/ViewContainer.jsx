@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
     view: state.view,
     browser: state.browser,
     projects: state.projects,
-    photos: state.photos
+    photosets: state.photos
   }
 }
 

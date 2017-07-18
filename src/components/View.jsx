@@ -12,7 +12,7 @@ export default class View extends Component {
     view: PropTypes.object.isRequired,
     browser: PropTypes.object.isRequired,
     projects: PropTypes.array.isRequired,
-    photos: PropTypes.object.isRequired,
+    photosets: PropTypes.object.isRequired,
     setViewContact: PropTypes.func.isRequired
   }
 
@@ -33,7 +33,7 @@ export default class View extends Component {
         )
       case 'photos':
         return (
-          <PhotosView browser={this.props.browser} photos={this.props.photos}/>
+          <PhotosView browser={this.props.browser} photos={this.props.photosets}/>
         )
       case 'about us':
         return (

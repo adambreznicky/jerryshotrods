@@ -1,23 +1,30 @@
 import objectAssign from 'object-assign'
+import { store } from './index'
+import { setPhotosets } from '../actions/photoActions'
+import secrets from "../secrets/secrets"
+import Flickr from "node-flickr"
 
-// import {
-//   SET_VIEW_HOME,
-//   SET_VIEW_SERVICES,
-//   SET_VIEW_PROJECTS,
-//   SET_VIEW_ABOUT_US,
-//   SET_VIEW_CONTACT
-// } from './actionTypes'
+const keys = {"api_key": secrets.flickrkey}
+const flickr = new Flickr(keys)
 
-const initialState = {
-  photos: "test"
-}
+import {
+  SET_PHOTOSETS
+} from './actionTypes'
+
+const initialState = {}
+
+flickr.get("photosets.getList", {"user_id":secrets.nsid}, function(err, result){
+    if (err) return console.error(err)
+    const photosets = result.photosets.photoset
+    store.dispatch(setPhotosets(photosets))
+});
 
 export default function view(state = initialState, action) {
   switch (action.type) {
-    // case SET_VIEW_HOME:
-    //   return objectAssign({}, state, {
-    //     view: 'home'
-    //   })
+    case SET_PHOTOSETS:
+      return objectAssign({}, state, {
+        photosets: action.ps
+      })
     // case SET_VIEW_SERVICES:
     //   return objectAssign({}, state, {
     //     view: 'services'

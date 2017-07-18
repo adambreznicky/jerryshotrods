@@ -183,6 +183,23 @@ html, body {
         }
       }
 
+      .photosView {
+        .display {
+          text-align: center;
+          margin-bottom: 15px;
+          margin-top: 15px;
+
+          .photoset {
+            cursor: pointer;
+          }
+
+          h5 {
+            font: 400 60px 'Arizonia', Helvetica, sans-serif;
+            text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+
       .aboutUsView {
         .display {
           text-align: center;
