@@ -79,7 +79,7 @@ export default class PhotosView extends Component {
 
       const pics = this.state.pics.map(function(p, i) {
         const url = "http://farm"+p.farm+".staticflickr.com/"+p.server+"/"+p.id+"_"+p.secret+".jpg"
-        return <img key={p.id} src={url} />
+        return <div className="imgContainer" key={p.id} ><img src={url} /></div>
       })
       guide = ""
       photosets = <div>

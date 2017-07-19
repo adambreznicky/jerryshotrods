@@ -16,6 +16,7 @@ html, body {
 
     img {
       border-radius: 20px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
     }
 
     .header {
@@ -126,10 +127,6 @@ html, body {
         .display {
           text-align: center;
 
-          img {
-            padding: 8px;
-          }
-
           h2 {
             font: 400 80px 'Arizonia', Helvetica, sans-serif;
           }
@@ -146,6 +143,10 @@ html, body {
 
           .slick-dots {
             margin-bottom: 10px;
+          }
+
+          .caption {
+            margin-top: 10px;
           }
         }
       }
@@ -189,6 +190,7 @@ html, body {
 
         p {
           font: 400 40px 'Arizonia', Helvetica, sans-serif;
+          margin-bottom: 35px;
         }
 
         .display {
@@ -198,10 +200,26 @@ html, body {
 
           .photoset {
             cursor: pointer;
+            display: inline;
+
+            img {
+              box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
+              margin-top: 15px;
+              margin-bottom: 0px;
+              -webkit-transition: all .5s ease;
+              -moz-transition: all .5s ease;
+              -o-transition: all .5s ease;
+            }
+
+            img:hover {
+              margin-top: 0px;
+              margin-bottom: 15px;
+            }
 
             h5 {
               font: 400 60px 'Arizonia', Helvetica, sans-serif;
               text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+              margin-bottom: 15px;
             }
           }
         }
@@ -225,6 +243,11 @@ html, body {
           }
         }
 
+        .back:hover {
+          background-color: steelblue;
+          color: darkgrey;
+        }
+
         .title {
           width: 100%;
 
@@ -238,8 +261,14 @@ html, body {
           }
         }
 
-        img {
+        .imgContainer {
           padding: 10px;
+          display: inline;
+
+          img {
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
+            margin-top: 20px;
+          }
         }
       }
 
