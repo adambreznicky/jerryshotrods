@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import Modal from 'react-modal';
 import { Row, Column, Icon } from 'react-foundation'
+import PhotosCarousel from './PhotosCarousel'
+
 import secrets from "../secrets/secrets"
 import Flickr from "node-flickr"
 
@@ -18,8 +21,11 @@ export default class PhotosView extends Component {
     this.state = {
       title: "",
       total: "",
-      pics: ""
+      pics: "",
+      modalIsOpen: false
     }
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
 
   compare(a,b) {
@@ -51,7 +57,27 @@ export default class PhotosView extends Component {
     })
   }
 
+  openModal() {
+    this.setState({modalIsOpen: true})
+  }
+
+  closeModal() {
+   this.setState({modalIsOpen: false})
+ }
+
   render() {
+    const customStyles = {
+     content : {
+       top                   : '50%',
+       left                  : '50%',
+       right                 : 'auto',
+       bottom                : 'auto',
+       marginRight           : '-50%',
+       transform             : 'translate(-50%, -50%)',
+       width             : '90%'
+     }
+   }
+
     let photosets
     let guide
     if (this.state.pics === "") {
@@ -76,11 +102,12 @@ export default class PhotosView extends Component {
       //order by updated date?
       //sorting button?
       //on click each photo open in carousel/model
+      //download photos
 
       const pics = this.state.pics.map(function(p, i) {
         const url = "http://farm"+p.farm+".staticflickr.com/"+p.server+"/"+p.id+"_"+p.secret+".jpg"
-        return <div className="imgContainer" key={p.id} ><img src={url} /></div>
-      })
+        return <div className="imgContainer" key={p.id} ><img src={url} onClick={() => this.openModal()} /></div>
+      }.bind(this))
       guide = ""
       photosets = <div>
         <div className="back" onClick={() => this.resetPhotosets()}><Icon name="fi-arrow-left"/><span> Back</span></div>
@@ -94,6 +121,14 @@ export default class PhotosView extends Component {
 
     return (
       <div className="photosView">
+        <Modal
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.closeModal}
+            style={customStyles}
+            contentLabel="Example Modal">
+            <button className="closeModal" onClick={this.closeModal}><Icon name="fi-x"/></button>
+            <PhotosCarousel />
+          </Modal>
         {guide}
         {photosets}
       </div>

@@ -8,6 +8,10 @@ html, body {
   position: relative;
 }
 
+.closeModal {
+  cursor: pointer;
+}
+
 #jhrSite {
   height: 100%;
 
@@ -283,6 +287,15 @@ html, body {
           img {
             box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
             margin-top: 20px;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -o-transition: all .5s ease;
+          }
+
+          img:hover {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            cursor: pointer;
           }
         }
       }
