@@ -1,5 +1,6 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import "~foundation-icons/foundation-icons.css";
 
 html, body {
   background: #ffe9d4;
@@ -184,6 +185,12 @@ html, body {
       }
 
       .photosView {
+        text-align: center;
+
+        p {
+          font: 400 40px 'Arizonia', Helvetica, sans-serif;
+        }
+
         .display {
           text-align: center;
           margin-bottom: 15px;
@@ -191,12 +198,48 @@ html, body {
 
           .photoset {
             cursor: pointer;
+
+            h5 {
+              font: 400 60px 'Arizonia', Helvetica, sans-serif;
+              text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+            }
           }
+        }
+
+        .back {
+          cursor: pointer;
+          margin: 20px;
+          font: 400 40px 'Arizonia', Helvetica, sans-serif;
+          display: inline-block;
+          background-color: lightsteelblue;
+          padding: 3px 20px 3px 10px;
+          border-radius: 20px;
+          color: rgb(96, 95, 95);
+
+          i {
+            vertical-align: middle;
+          }
+
+          span {
+            vertical-align: middle;
+          }
+        }
+
+        .title {
+          width: 100%;
 
           h5 {
             font: 400 60px 'Arizonia', Helvetica, sans-serif;
             text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
           }
+
+          h6 {
+            font: 400 48px 'Arizonia', Helvetica, sans-serif;
+          }
+        }
+
+        img {
+          padding: 10px;
         }
       }
 

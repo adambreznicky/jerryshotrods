@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Column } from 'react-foundation'
+import { Row, Column, Icon } from 'react-foundation'
 import secrets from "../secrets/secrets"
 import Flickr from "node-flickr"
 
@@ -53,7 +53,9 @@ export default class PhotosView extends Component {
 
   render() {
     let photosets
+    let guide
     if (this.state.pics === "") {
+      guide = <p>Choose a project to view the build photos...</p>
       const ordered = this.props.photos.photosets.sort(this.compare)
       photosets = ordered.map(function(p, i) {
         // http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
@@ -79,16 +81,20 @@ export default class PhotosView extends Component {
         const url = "http://farm"+p.farm+".staticflickr.com/"+p.server+"/"+p.id+"_"+p.secret+".jpg"
         return <img key={p.id} src={url} />
       })
+      guide = ""
       photosets = <div>
-        <div className="back" onClick={() => this.resetPhotosets()}>back</div>
-        <h5>{this.state.title}</h5>
-        <h6>{this.state.total} Photos</h6>
+        <div className="back" onClick={() => this.resetPhotosets()}><Icon name="fi-arrow-left"/><span> Back</span></div>
+        <div className="title">
+          <h5>{this.state.title}</h5>
+          <h6>{this.state.total} Photos</h6>
+        </div>
         {pics}
       </div>
     }
 
     return (
       <div className="photosView">
+        {guide}
         {photosets}
       </div>
     )
