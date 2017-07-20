@@ -10,6 +10,28 @@ html, body {
 
 .closeModal {
   cursor: pointer;
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.slick-prev:before {
+  color: steelblue;
+}
+
+.slick-next:before {
+  color: steelblue;
+}
+
+.slick-list {
+  height: 7px;
+
+  .slick-slide {
+    img {
+      margin: 0 auto;
+    }
+  }
 }
 
 #jhrSite {
@@ -286,14 +308,14 @@ html, body {
 
           img {
             box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
-            margin-top: 20px;
+            margin-top: 25px;
             -webkit-transition: all .5s ease;
             -moz-transition: all .5s ease;
             -o-transition: all .5s ease;
           }
 
           img:hover {
-            margin-top: 5px;
+            margin-top: 10px;
             margin-bottom: 15px;
             cursor: pointer;
           }

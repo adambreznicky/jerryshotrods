@@ -22,7 +22,9 @@ export default class PhotosView extends Component {
       title: "",
       total: "",
       pics: "",
-      modalIsOpen: false
+      modalIsOpen: false,
+      clicked: "",
+      clickedIndex: 0
     }
     this.openModal = this.openModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
@@ -53,16 +55,25 @@ export default class PhotosView extends Component {
     this.setState({
       title: "",
       total: "",
-      pics: ""
+      pics: "",
+      clicked: ""
     })
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true})
+  openModal(clickedId, i) {
+    this.setState({
+      modalIsOpen: true,
+      clicked: clickedId,
+      clickedIndex: i
+    })
   }
 
   closeModal() {
-   this.setState({modalIsOpen: false})
+   this.setState({
+     modalIsOpen: false,
+     clicked: "",
+     clickedIndex: 0
+   })
  }
 
   render() {
@@ -74,7 +85,8 @@ export default class PhotosView extends Component {
        bottom                : 'auto',
        marginRight           : '-50%',
        transform             : 'translate(-50%, -50%)',
-       width             : '90%'
+       width                 : '90%',
+       overflow              : 'hidden'
      }
    }
 
@@ -106,7 +118,7 @@ export default class PhotosView extends Component {
 
       const pics = this.state.pics.map(function(p, i) {
         const url = "http://farm"+p.farm+".staticflickr.com/"+p.server+"/"+p.id+"_"+p.secret+".jpg"
-        return <div className="imgContainer" key={p.id} ><img src={url} onClick={() => this.openModal()} /></div>
+        return <div className="imgContainer" key={p.id} ><img src={url} onClick={() => this.openModal(p.id, i)} /></div>
       }.bind(this))
       guide = ""
       photosets = <div>
@@ -125,9 +137,13 @@ export default class PhotosView extends Component {
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             style={customStyles}
-            contentLabel="Example Modal">
+            contentLabel="Photo Gallery">
             <button className="closeModal" onClick={this.closeModal}><Icon name="fi-x"/></button>
-            <PhotosCarousel />
+            <PhotosCarousel
+            clicked={this.state.clicked}
+            photos={this.state.pics}
+            start={this.state.clickedIndex}
+            browser={this.props.browser} />
           </Modal>
         {guide}
         {photosets}
