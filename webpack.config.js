@@ -21,8 +21,8 @@ module.exports = {
     app: ['./entry.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, './dist/assets'),
-    publicPath: '/assets',
+    path: path.resolve(__dirname, './dist/assets/'),
+    publicPath: 'assets/',
     filename: '[name].bundle.js'
   },
   devServer: {
