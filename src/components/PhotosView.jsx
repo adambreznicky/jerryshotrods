@@ -17,7 +17,6 @@ export default class PhotosView extends Component {
 
   constructor(props) {
     super(props)
-    console.log(this.props)
     this.state = {
       title: "",
       total: "",
@@ -41,7 +40,6 @@ export default class PhotosView extends Component {
   getPics(psid) {
     flickr.get("photosets.getPhotos", {"photoset_id":psid,"user_id":secrets.nsid}, function(err, result){
         if (err) return console.error(err)
-        console.log(result)
         this.setState({
           title: result.photoset.title,
           total: result.photoset.total,
