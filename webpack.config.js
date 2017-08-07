@@ -30,7 +30,9 @@ module.exports = {
   },
   node: {
     fs: "empty",
-    child_process: 'empty'
+    child_process: 'empty',
+    dns: "empty",
+    net: "empty"
   },
   module: {
     loaders: [

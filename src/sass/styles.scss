@@ -353,6 +353,34 @@ html, body {
         h6 {
           font: 400 40px 'Arizonia', Helvetica, sans-serif;
         }
+
+        form {
+          padding: 20px;
+
+          .submitButton {
+            cursor: pointer;
+            margin: 20px;
+            font: 400 40px 'Arizonia', Helvetica, sans-serif;
+            display: inline-block;
+            background-color: lightsteelblue;
+            padding: 3px 20px 3px 10px;
+            border-radius: 20px;
+            color: rgb(96, 95, 95);
+
+            i {
+              vertical-align: middle;
+            }
+
+            span {
+              vertical-align: middle;
+            }
+          }
+
+          .submitButton:hover {
+            background-color: steelblue;
+            color: darkgrey;
+          }
+        }
       }
     }
 
