@@ -336,6 +336,26 @@ html, body {
 
     }
 
+    .contactView {
+      .display {
+        text-align: center;
+
+        h5 {
+          font: 400 60px 'Arizonia', Helvetica, sans-serif;
+        }
+
+        ul {
+          margin: 0 auto;
+          text-align: left;
+          width: 75%;
+        }
+
+        h6 {
+          font: 400 40px 'Arizonia', Helvetica, sans-serif;
+        }
+      }
+    }
+
 
     .footer {
       width: 100%;
